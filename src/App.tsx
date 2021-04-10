@@ -1,5 +1,12 @@
 import React from 'react'
+import Login from './components/Login'
+import GlobalStyle from './styles/GlobalStyle'
 
-const App = () => <h1>Hello World!</h1>
+const App = () => (
+  <>
+    <GlobalStyle />
+    <Login />
+  </>
+)
 
 export default App
