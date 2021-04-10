@@ -1,11 +1,13 @@
 import React from 'react'
-import Login from './components/Login'
+import Header from './components/Header'
+// import Login from './components/Login'
 import GlobalStyle from './styles/GlobalStyle'
 
 const App = () => (
   <>
     <GlobalStyle />
-    <Login />
+    {/* <Login /> */}
+    <Header />
   </>
 )
 
