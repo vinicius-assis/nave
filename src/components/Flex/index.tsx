@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 type FlexProps = {
+  width?: string
   column?: boolean
   justify?: string
   align?: string
@@ -13,7 +14,7 @@ type FlexProps = {
 
 const Flex = styled.div<FlexProps>`
   display: flex;
-  width: 100%;
+  ${({ width }) => (width ? `width: ${width};` : '100%;')}
   ${({ column }) => (column ? 'flex-direction: column;' : '')}
   ${({ justify }) => (justify ? `justify-content: ${justify};` : '')}
   ${({ align }) => (align ? `align-items: ${align};` : '')}
