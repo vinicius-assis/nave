@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
-const Button = styled.button`
+type ButtonProps = {
+  small?: boolean
+}
+
+const Button = styled.button<ButtonProps>`
   width: 100%;
-  max-width: 384px;
+  max-width: ${({ small }) => (small ? '176px' : '384px')};
   height: 40px;
   display: flex;
   align-items: center;
