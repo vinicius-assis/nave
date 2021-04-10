@@ -1,8 +1,10 @@
 import React from 'react'
 import Flex from '../Flex/index'
 import { NaveIcon, NaveLogo } from '../../assets/Icons'
-import { LoginInput, LoginLabel, LoginWrapper } from './styles'
+import { LoginWrapper } from './styles'
 import Button from '../Button'
+import Label from '../Label'
+import Input from '../Input'
 
 const Login = () => (
   <LoginWrapper>
@@ -11,12 +13,12 @@ const Login = () => (
       <NaveLogo />
     </Flex>
     <Flex column mb="32px">
-      <LoginLabel>E-mail</LoginLabel>
-      <LoginInput />
+      <Label>E-mail</Label>
+      <Input type="email" placeholder="E-mail" />
     </Flex>
     <Flex column mb="32px">
-      <LoginLabel>Senha</LoginLabel>
-      <LoginInput />
+      <Label>Senha</Label>
+      <Input type="password" placeholder="Senha" />
     </Flex>
     <Button>Entrar</Button>
   </LoginWrapper>
