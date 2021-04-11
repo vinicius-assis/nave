@@ -12,6 +12,10 @@ type FlexProps = {
   ml?: string
   column?: boolean
   wrap?: boolean
+  pl?: string
+  pr?: string
+  pt?: string
+  pb?: string
 }
 
 const Flex = styled.div<FlexProps>`
@@ -27,6 +31,10 @@ const Flex = styled.div<FlexProps>`
   ${({ mt }) => (mt ? `margin-top: ${mt};` : '')}
   ${({ mr }) => (mr ? `margin-right: ${mr};` : '')}
   ${({ ml }) => (ml ? `margin-left: ${ml};` : '')}
+  ${({ pl }) => (pl ? `padding-left: ${pl};` : '')}
+  ${({ pr }) => (pr ? `padding-right: ${pr};` : '')}
+  ${({ pt }) => (pt ? `padding-top: ${pt};` : '')}
+  ${({ pb }) => (pb ? `padding-bottom: ${pb};` : '')}
 `
 
 export default Flex
