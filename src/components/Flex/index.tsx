@@ -16,6 +16,7 @@ type FlexProps = {
   pr?: string
   pt?: string
   pb?: string
+  position?: string
 }
 
 const Flex = styled.div<FlexProps>`
@@ -35,6 +36,7 @@ const Flex = styled.div<FlexProps>`
   ${({ pr }) => (pr ? `padding-right: ${pr};` : '')}
   ${({ pt }) => (pt ? `padding-top: ${pt};` : '')}
   ${({ pb }) => (pb ? `padding-bottom: ${pb};` : '')}
+  ${({ position }) => (position ? `position: ${position};` : '')}
 `
 
 export default Flex
