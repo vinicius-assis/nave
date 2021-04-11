@@ -8,6 +8,7 @@ export const CardImage = styled.img.attrs(({ src }) => ({
   height: 280px;
   background-color: #ccc;
   margin-bottom: 16px;
+  cursor: pointer;
 `
 
 export const CardTitle = styled.h3`

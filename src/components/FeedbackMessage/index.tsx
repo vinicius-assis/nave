@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalContext, TContext } from '../../context/globalContext'
 import Button from '../Button'
 import CloseButton from '../CloseButton'
 import Flex from '../Flex'
@@ -21,6 +22,8 @@ type TMessageData = {
 }
 
 const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
+  const { handleOpenModal } = useContext(GlobalContext) as TContext
+
   const messages: TMessages = {
     create: {
       title: 'Naver Criado',
@@ -53,7 +56,7 @@ const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
       </Flex>
       {type === 'confirm' && (
         <Flex justify="flex-end">
-          <Button light small mr="24px">
+          <Button light small mr="24px" onClick={handleOpenModal}>
             Cancelar
           </Button>
           <Button small>Excluir</Button>

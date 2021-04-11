@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { GlobalContext, TContext } from '../../context/globalContext'
 import Modal from '../Modal'
 
 const LayerWrapper = styled.div`
@@ -17,10 +18,16 @@ const LayerWrapper = styled.div`
     padding: 0 15px;
   }
 `
-const Layer = () => (
-  <LayerWrapper>
-    <Modal />
-  </LayerWrapper>
-)
+const Layer = () => {
+  const { openModal } = useContext(GlobalContext) as TContext
+
+  if (!openModal) return null
+
+  return (
+    <LayerWrapper>
+      <Modal />
+    </LayerWrapper>
+  )
+}
 
 export default Layer

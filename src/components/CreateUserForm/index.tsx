@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowIcon } from '../../assets/Icons'
+import BackButton from '../BackButton'
 import Button from '../Button'
 import Container from '../Container'
 import Flex from '../Flex'
@@ -13,7 +13,7 @@ const CreateUserForm = () => (
     <Flex justify="center">
       <CreateForm>
         <Flex mb="54px" align="center">
-          <ArrowIcon />
+          <BackButton />
           <Title ml="22px">Adicionar Naver</Title>
         </Flex>
         <Flex column width="50%" maxWidth="280px">

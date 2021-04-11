@@ -26,6 +26,7 @@
         "exports": "always-multiline",
         "functions": "never"
       }
-    ]
+    ],
+    "multiline-ternary": "off"
   }
 }
