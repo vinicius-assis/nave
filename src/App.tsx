@@ -3,7 +3,8 @@ import React from 'react'
 import Header from './components/Header'
 import Home from './components/Home'
 import Layer from './components/Layer'
-import NaverDisplay from './components/NaverDisplay'
+import Modal from './components/Modal'
+// import NaverProfile from './components/NaverProfile'
 // import Login from './components/Login'
 import GlobalStyle from './styles/GlobalStyle'
 
@@ -14,7 +15,8 @@ const App = () => (
     <Header />
     <Home />
     <Layer>
-      <NaverDisplay />
+      {/* <NaverProfile /> */}
+      <Modal />
     </Layer>
     {/* <CreateUserForm /> */}
   </>
