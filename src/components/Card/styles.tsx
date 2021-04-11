@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardImage = styled.img.attrs(({ src }) => ({
-  src: src,
+  src,
   alt: 'Employee picture',
 }))`
   width: 100%;

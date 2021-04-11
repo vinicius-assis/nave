@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Layer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -10,6 +10,10 @@ const Layer = styled.div`
   position: fixed;
   left: 0;
   top: 0;
+
+  @media (max-width: 600px) {
+    padding: 0 15px;
+  }
 `
 
 export default Layer
