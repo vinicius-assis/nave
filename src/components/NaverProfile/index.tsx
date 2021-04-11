@@ -2,11 +2,10 @@ import React from 'react'
 import { DeleteIcon, EditIcon } from '../../assets/Icons'
 import CloseButton from '../CloseButton'
 import Flex from '../Flex'
-// import Container from '../Container'
 import { ProfileSubTitle, ProfileTitle, Title } from '../Titles'
 import { Naver, NaverPicture } from './styles'
 
-const NaverDisplay = () => (
+const NaverProfile = () => (
   <Naver>
     <Flex width="50%">
       <NaverPicture />
@@ -29,4 +28,4 @@ const NaverDisplay = () => (
   </Naver>
 )
 
-export default NaverDisplay
+export default NaverProfile

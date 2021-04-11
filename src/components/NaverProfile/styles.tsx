@@ -9,10 +9,10 @@ export const Naver = styled.div`
   background-color: #fff;
 `
 
-export const NaverPicture = styled.img.attrs({
-  src: '#',
-  alt: 'Naver picture',
-})`
+export const NaverPicture = styled.img.attrs(({ src }) => ({
+  src,
+  alt: 'Employee picture',
+}))`
   background-color: #ccc;
   width: 100%;
   height: 100%;
