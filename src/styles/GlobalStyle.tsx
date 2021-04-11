@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     outline: none;
   }
+
+  body {
+    overflow-x: hidden;
+  }
 `
 
 export default GlobalStyle
