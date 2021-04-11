@@ -1,13 +1,14 @@
 import React from 'react'
 import { DeleteIcon, EditIcon } from '../../assets/Icons'
 import Flex from '../Flex'
-import { CardAction, CardImage, CardSubTitle, CardTitle } from './styles'
+import { ProfileSubTitle, ProfileTitle } from '../Titles'
+import { CardAction, CardImage } from './styles'
 
 const Card = () => (
   <Flex maxWidth="280px" column>
     <CardImage />
-    <CardTitle>Vinicius Assis</CardTitle>
-    <CardSubTitle>Front-end Developer</CardSubTitle>
+    <ProfileTitle>Vinicius Assis</ProfileTitle>
+    <ProfileSubTitle>Front-end Developer</ProfileSubTitle>
     <Flex mb="40px">
       <CardAction>
         <DeleteIcon />

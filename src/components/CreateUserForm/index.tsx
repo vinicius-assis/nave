@@ -5,7 +5,7 @@ import Container from '../Container'
 import Flex from '../Flex'
 import Input from '../Input'
 import Label from '../Label'
-import Title from '../Title'
+import { Title } from '../Titles'
 import { CreateForm } from './styles'
 
 const CreateUserForm = () => (
