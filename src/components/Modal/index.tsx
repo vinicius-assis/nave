@@ -12,7 +12,7 @@ const ModalWrapper = styled.div`
 
 const Modal = () => (
   <ModalWrapper>
-    <FeedbackMessage type="delete" />
+    <FeedbackMessage type="confirm" />
   </ModalWrapper>
 )
 

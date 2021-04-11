@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button'
 import CloseButton from '../CloseButton'
 import Flex from '../Flex'
 import { ProfileSubTitle, Title } from '../Titles'
@@ -11,6 +12,7 @@ type TMessages = {
   create: TMessageData
   delete: TMessageData
   update: TMessageData
+  confirm: TMessageData
 }
 
 type TMessageData = {
@@ -32,6 +34,10 @@ const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
       title: 'Naver atualizado',
       content: 'Naver atualizado com sucesso!',
     },
+    confirm: {
+      title: 'Excluir Naver',
+      content: 'Tem certeza que deseja excluir este Naver?',
+    },
   }
 
   const { title, content } = messages[type]
@@ -40,11 +46,19 @@ const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
     <>
       <Flex mb="24px">
         <Title>{title}</Title>
-        <CloseButton />
+        {type !== 'confirm' && <CloseButton />}
       </Flex>
       <Flex>
         <ProfileSubTitle>{content}</ProfileSubTitle>
       </Flex>
+      {type === 'confirm' && (
+        <Flex justify="flex-end">
+          <Button light small mr="24px">
+            Cancelar
+          </Button>
+          <Button small>Excluir</Button>
+        </Flex>
+      )}
     </>
   )
 }
