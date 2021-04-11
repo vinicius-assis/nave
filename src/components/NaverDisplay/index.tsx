@@ -1,5 +1,6 @@
 import React from 'react'
 import { DeleteIcon, EditIcon } from '../../assets/Icons'
+import CloseButton from '../CloseButton'
 import Flex from '../Flex'
 // import Container from '../Container'
 import { ProfileSubTitle, ProfileTitle, Title } from '../Titles'
@@ -10,7 +11,7 @@ const NaverDisplay = () => (
     <Flex width="50%">
       <NaverPicture />
     </Flex>
-    <Flex column width="50%" pl="30px" pt="32px" pb="30px">
+    <Flex column width="50%" pl="30px" pt="32px" pb="30px" position="relative">
       <Title mb="10px">Vinicius</Title>
       <ProfileSubTitle mb="24px">Front-end Developer</ProfileSubTitle>
       <ProfileTitle mb="10px">Idade</ProfileTitle>
@@ -23,6 +24,7 @@ const NaverDisplay = () => (
         <DeleteIcon />
         <EditIcon />
       </Flex>
+      <CloseButton />
     </Flex>
   </Naver>
 )
