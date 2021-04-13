@@ -24,7 +24,6 @@ const Home = () => {
       const getNavers = async () => {
         const response = await GETNAVERS(token as string)
         if (!response) return
-        console.log(response.data)
         setNaverList(response.data)
       }
 

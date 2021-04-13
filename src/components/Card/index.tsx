@@ -17,7 +17,7 @@ const Card = ({ id, name, jobRole, url }: TCardProps) => {
 
   return (
     <Flex maxWidth="280px" column id={id}>
-      <CardImage onClick={() => handleOpenModal()} src={url} />
+      <CardImage onClick={() => handleOpenModal('show', id)} src={url} />
       <ProfileTitle>{name}</ProfileTitle>
       <ProfileSubTitle>{jobRole}</ProfileSubTitle>
       <Flex mb="40px">

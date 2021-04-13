@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { GlobalContext, TContext } from '../../context/globalContext'
 import Modal from '../Modal'
+import NaverProfile from '../NaverProfile'
 
 const LayerWrapper = styled.div`
   width: 100%;
@@ -19,13 +20,16 @@ const LayerWrapper = styled.div`
   }
 `
 const Layer = () => {
-  const { openModal } = useContext(GlobalContext) as TContext
+  const {
+    openModal,
+    modalAction: { action, id },
+  } = useContext(GlobalContext) as TContext
 
   if (!openModal) return null
 
   return (
     <LayerWrapper>
-      <Modal />
+      {action !== 'show' ? <Modal /> : <NaverProfile id={id} />}
     </LayerWrapper>
   )
 }

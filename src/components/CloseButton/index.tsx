@@ -15,7 +15,7 @@ const CloseButton = () => {
   const { handleOpenModal } = useContext(GlobalContext) as TContext
 
   return (
-    <Button onClick={() => handleOpenModal}>
+    <Button onClick={() => handleOpenModal()}>
       <CloseIcon />
     </Button>
   )

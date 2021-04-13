@@ -12,11 +12,13 @@ const ModalWrapper = styled.div`
 `
 
 const Modal = () => {
-  const { modalAction } = useContext(GlobalContext) as TContext
+  const {
+    modalAction: { action, id },
+  } = useContext(GlobalContext) as TContext
 
   return (
     <ModalWrapper>
-      <FeedbackMessage type={modalAction.action} id={modalAction.id} />
+      <FeedbackMessage type={action} id={id} />
     </ModalWrapper>
   )
 }
