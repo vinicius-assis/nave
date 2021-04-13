@@ -5,14 +5,21 @@ import Flex from '../Flex'
 import { ProfileSubTitle, ProfileTitle } from '../Titles'
 import { CardAction, CardImage } from './styles'
 
-const Card = () => {
+type TCardProps = {
+  id: string
+  name: string
+  jobRole: string
+  url: string
+}
+
+const Card = ({ id, name, jobRole, url }: TCardProps) => {
   const { handleOpenModal } = useContext(GlobalContext) as TContext
 
   return (
-    <Flex maxWidth="280px" column>
-      <CardImage onClick={handleOpenModal} />
-      <ProfileTitle>Vinicius Assis</ProfileTitle>
-      <ProfileSubTitle>Front-end Developer</ProfileSubTitle>
+    <Flex maxWidth="280px" column id={id}>
+      <CardImage onClick={handleOpenModal} src={url} />
+      <ProfileTitle>{name}</ProfileTitle>
+      <ProfileSubTitle>{jobRole}</ProfileSubTitle>
       <Flex mb="40px">
         <CardAction>
           <DeleteIcon />
