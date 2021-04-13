@@ -6,7 +6,7 @@ type TStorageProps = {
 
 export type TContext = {
   openModal: boolean
-  handleOpenModal: () => void
+  handleOpenModal: (action?: string, id?: string) => void
   logged: boolean
   handleLogged: () => void
   openForm: boolean
@@ -15,6 +15,13 @@ export type TContext = {
   setToken?: any
   naverList: any
   setNaverList: any
+  modalAction: TModalActionProps
+  setModalAction: (value: TModalActionProps) => void
+}
+
+export type TModalActionProps = {
+  action: string
+  id: string
 }
 
 export const GlobalContext = createContext({})
@@ -25,8 +32,15 @@ export const GlobalStorage = ({ children }: TStorageProps) => {
   const [openForm, setOpenForm] = useState<boolean>(false)
   const [token, setToken] = useState<string>('')
   const [naverList, setNaverList] = useState([])
+  const [modalAction, setModalAction] = useState<TModalActionProps>({
+    action: '',
+    id: '',
+  })
 
-  const handleOpenModal = () => setOpenModal(!openModal)
+  const handleOpenModal = (action = '', id = '') => {
+    setModalAction({ action, id })
+    setOpenModal(!openModal)
+  }
   const handleOpenForm = () => {
     setOpenForm(!openForm)
   }
@@ -49,6 +63,7 @@ export const GlobalStorage = ({ children }: TStorageProps) => {
         setToken,
         naverList,
         setNaverList,
+        modalAction,
       }}
     >
       {children}

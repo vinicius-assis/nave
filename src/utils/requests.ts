@@ -20,3 +20,18 @@ export const GETNAVERS = async (token: string): Promise<any> =>
     })
     .then((data) => data)
     .catch((error) => console.error(error))
+
+export const DELETENAVER = async (
+  token: string | undefined,
+  naverId: string,
+  closeModal: () => void
+) =>
+  axios
+    .delete(`${url}/navers/${naverId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((data) => {
+      return data
+    })
+    .catch((error) => error)
+    .finally(closeModal)

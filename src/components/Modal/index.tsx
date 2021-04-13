@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { GlobalContext, TContext } from '../../context/globalContext'
 import FeedbackMessage from '../FeedbackMessage'
 
 const ModalWrapper = styled.div`
@@ -10,10 +11,14 @@ const ModalWrapper = styled.div`
   background-color: #fff;
 `
 
-const Modal = () => (
-  <ModalWrapper>
-    <FeedbackMessage type="confirm" />
-  </ModalWrapper>
-)
+const Modal = () => {
+  const { modalAction } = useContext(GlobalContext) as TContext
+
+  return (
+    <ModalWrapper>
+      <FeedbackMessage type={modalAction.action} id={modalAction.id} />
+    </ModalWrapper>
+  )
+}
 
 export default Modal

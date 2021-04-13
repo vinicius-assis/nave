@@ -31,7 +31,7 @@ const Home = () => {
       getNavers()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [logged])
+  }, [logged, naverList])
 
   if (!logged) {
     return null

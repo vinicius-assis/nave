@@ -4,9 +4,11 @@ import Button from '../Button'
 import CloseButton from '../CloseButton'
 import Flex from '../Flex'
 import { ProfileSubTitle, Title } from '../Titles'
+import { DELETENAVER } from '../../utils/requests'
 
 type FeedbackMessageProps = {
-  type: keyof TMessages
+  type: string
+  id: string
 }
 
 type TMessages = {
@@ -21,8 +23,10 @@ type TMessageData = {
   content: string
 }
 
-const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
-  const { handleOpenModal } = useContext(GlobalContext) as TContext
+const FeedbackMessage = ({ type, id }: FeedbackMessageProps) => {
+  const { handleOpenModal, token } = useContext(GlobalContext) as TContext
+
+  if (!type) return null
 
   const messages: TMessages = {
     create: {
@@ -43,7 +47,7 @@ const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
     },
   }
 
-  const { title, content } = messages[type]
+  const { title, content } = messages[type as keyof TMessages]
 
   return (
     <>
@@ -56,10 +60,12 @@ const FeedbackMessage = ({ type }: FeedbackMessageProps) => {
       </Flex>
       {type === 'confirm' && (
         <Flex justify="flex-end">
-          <Button light small mr="24px" onClick={handleOpenModal}>
+          <Button light small mr="24px" onClick={() => handleOpenModal()}>
             Cancelar
           </Button>
-          <Button small>Excluir</Button>
+          <Button small onClick={() => DELETENAVER(token, id, handleOpenModal)}>
+            Excluir
+          </Button>
         </Flex>
       )}
     </>
