@@ -18,20 +18,24 @@ const Home = () => {
     naverList,
     setNaverList,
   } = useContext(GlobalContext) as TContext
-  //
-
-  if (!logged) return null
 
   useEffect(() => {
-    const getNavers = async () => {
-      const response = await GETNAVERS(token as string)
-      if (!response) return
-      console.log(response.data)
-      setNaverList(response.data)
-    }
+    if (logged) {
+      const getNavers = async () => {
+        const response = await GETNAVERS(token as string)
+        if (!response) return
+        console.log(response.data)
+        setNaverList(response.data)
+      }
 
-    getNavers()
-  }, [])
+      getNavers()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [logged])
+
+  if (!logged) {
+    return null
+  }
 
   return (
     <>
